@@ -476,6 +476,11 @@ a:hover {
     margin-left: 2rem;
     /* border-top: solid 1px #eff0f1 */
 }
+.h4 {
+    padding-top: 2rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
 @media screen and (min-width: 64em) {
     .site-footer {
     font-size: 1rem}
