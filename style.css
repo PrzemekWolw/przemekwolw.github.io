@@ -523,6 +523,22 @@ a:hover {
     max-width: 50%;
     padding: 0.2rem 0.2rem;
 }
+c1:hover {
+  background-color: #00aefe8a;
+   backdrop-filter: blur(25px)
+}
+c2:hover {
+  background-color: #00aefe8a;
+   backdrop-filter: blur(25px)
+}
+c3:hover {
+  background-color: #00aefe8a;
+   backdrop-filter: blur(25px)
+}
+c4:hover {
+  background-color: #00aefe8a;
+   backdrop-filter: blur(25px)
+}
 .text1 {
     position: absolute;
     bottom: 0px;
@@ -549,6 +565,7 @@ a:hover {
     max-width: 100%;
     width: 100%;
     position: relative;
+    left: 25%;
     /*left: 20%;
     margin-right: -50%;
     transform: translate(-50%, -50%) }
