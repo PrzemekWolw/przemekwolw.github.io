@@ -1,0 +1,145 @@
+{
+  "title": "Car_Killer - Przemysław Wolny",
+  "description": "Personal website of Car_Killer (C/K) - BeamNG.drive modder, developer, technical artist.",
+  "mark": "C/K",
+  "theme": {"mode": "dark", "accent": "#f15a22"},
+  "hero": {"id": "hello", "video": "videos/hero_background.webm", "name": "Car_Killer", "hello": "Hello There! My name is Przemysław 'Car_Killer' Wolny.", "roles": "Technical Artist, QA, and Modder", "place": "BeamNG Technical Artist/QA"},
+  "footer": {"name": "Przemysław “Car_Killer” Wolny", "host": "GitHub Pages", "hostUrl": "https://pages.github.com/"},
+  "sections": [
+    {
+      "id": "about",
+      "title": "about",
+      "background": "images/about.webp",
+      "blocks": [
+        {"lead": "I'm a Technical Artist, QA, and Modder."},
+        {"text": "I build world editor tools, design custom pipelines for artists, and develop content validation tools."},
+        {"text": "On the modding side, I focus on environment art, building immersive custom levels and assets from scratch utilizing photogrammetry, LiDAR scans, and real-world geographic data."},
+        {
+          "text": "In my professional work, I specialize in rendering pipelines, physically based lighting, post-processing, and color management. I also work closely with engineering teams to optimize performance and ensure smooth experience across diverse hardware such as PC/Linux, Handhelds, VR, PlayStation 5 and NVIDIA RTX Spark"
+        },
+        {"heading": "The motivation"},
+        {
+          "text": "I believe that everyone should be able to experience great games with high fidelity, exceptional motion clarity, and the absolute freedom to modify them. As a technical artist and developer, I strive to build the tools, and environments that allow this for players and creators alike."
+        },
+        {"text": "My passion for game development comes from the modding games. As long I can remmeber, I was always tried to mod games, and I'm still doing it today. I believe that modding is a great way to learn and express yourself."}
+      ]
+    },
+    {
+      "id": "work",
+      "title": "work",
+      "background": "images/mods.webp",
+      "sheets": [
+        {
+          "images": ["images/world_editor.webp", "images/world_editor2.webp", "images/blender.webp", "images/blender2.webp"],
+          "alt": "BeamNG.drive Technical Artist/QA",
+          "caption": "BeamNG.drive",
+          "url": "https://www.beamng.gmbh/",
+          "kicker": "technical artist/qa",
+          "title": "BeamNG.drive Technical Artist/QA",
+          "text": "I work as a Technical Artist/QA for BeamNG.drive, where I build world editor tools, design custom pipelines for artists, content creators, and develop content validation tools. Additionally I help mod and content creators improving their mods and content and provide technical support.",
+          "meta": [{"label": "Platform", "value": "BeamNG.drive"}, {"label": "Medium", "value": "Technical Artist/QA"}, {"label": "Links", "value": "Browse technical artist/QA", "url": "https://www.beamng.gmbh/"}]
+        },
+        {
+          "images": ["images/mods.webp", "images/mods2.webp", "images/mods3.webp", "images/mods4.webp", "images/mods5.webp", "images/mods6.webp", "images/mods7.webp", "images/mods8.webp", "images/mods9.webp", "images/mods10.webp"],
+          "alt": "BeamNG.drive mods",
+          "caption": "BeamNG.drive",
+          "url": "https://www.beamng.com/resources/authors/car_killer.27522/",
+          "kicker": "mods",
+          "title": "BeamNG.drive Mods",
+          "text": "High-quality custom levels, remasters, UI, and add-ons. Built with a strong focus on realistic road layouts, detailed environment design, and photorealistic materials, while pushing the visual and technical limits of the game engine.",
+          "meta": [{"label": "Platform", "value": "BeamNG.drive"}, {"label": "Medium", "value": "Levels, UI, add-ons"}, {"label": "Links", "value": "Browse mods", "url": "https://www.beamng.com/resources/authors/car_killer.27522/"}]
+        },
+        {
+          "images": ["images/youtube.webp"],
+          "alt": "YouTube channel still",
+          "caption": "YouTube",
+          "url": "https://www.youtube.com/carkiller",
+          "kicker": "video",
+          "title": "Videos, Showcases, and Tutorials",
+          "text": "A creative space where I share videos from games, mod development progress, lost game builds, and real life car driving.",
+          "meta": [{"label": "Platform", "value": "YouTube"}, {"label": "Medium", "value": "Video"}, {"label": "Links", "value": "Watch channel", "url": "https://www.youtube.com/carkiller"}]
+        }
+      ]
+    },
+    {
+      "id": "photogrammetry",
+      "title": "photogrammetry",
+      "background": "images/photogrammetry5.webp",
+      "sheets": [
+        {
+          "images": ["images/photogrammetry.webp", "images/photogrammetry2.webp", "images/photogrammetry3.webp", "images/photogrammetry4.webp", "images/photogrammetry5.webp", "images/photogrammetry6.webp", "images/photogrammetry7.webp"],
+          "alt": "Photogrammetry scans baked into PBR materials in Blender, and the result in BeamNG.drive",
+          "caption": "Scan to PBR material",
+          "kicker": "real world data",
+          "title": "Photogrammetry and PBR Materials",
+          "text": "Real roads, pavements, and ground are photographed and reconstructed into dense 3D scans. The scan is then baked into tileable PBR textures (albedo, normal, roughness, ambient occlusion, height) that are ready for BeamNG.drive levels.",
+          "meta": [{"label": "Process", "value": "Photos, scan, bake, PBR material"}, {"label": "Tools", "value": "Blender, Cycles, Materialize"}, {"label": "Used in", "value": "BeamNG.drive levels"}]
+        }
+      ]
+    },
+    {
+      "id": "photography",
+      "title": "photography",
+      "background": "images/photography.webp",
+      "sheets": [
+        {
+          "images": ["images/photography.webp", "images/photography2.webp", "images/photography3.webp", "images/photography4.webp", "images/photography5.webp", "images/photography6.webp"],
+          "alt": "A place photographed nearby",
+          "caption": "Instagram",
+          "url": "https://www.instagram.com/przem.wolny/",
+          "kicker": "places",
+          "title": "Photography",
+          "text": "My Instagram is a place where I share pictures of places around me, which I take inspirations from.",
+          "meta": [{"label": "Platform", "value": "Instagram"}, {"label": "Links", "value": "przem.wolny", "url": "https://www.instagram.com/przem.wolny/"}]
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "title": "tools",
+      "background": "images/tools.webp",
+      "tools": [
+        {
+          "size": "wide",
+          "color": "cobalt",
+          "icon": "fa-solid fa-cube",
+          "title": "BeamNG Level Importer",
+          "text": "Blender addon that imports BeamNG levels and assets.",
+          "images": ["https://camo.githubusercontent.com/c278c6be603709632fe030eff3cca792965e2695f0f87155030e58ce5c68ba53/68747470733a2f2f6d656469612e6265616d6e672e636f6d2f30415549577341727574597039795a46"],
+          "url": "https://github.com/PrzemekWolw/BeamNGLevelImporter"
+        },
+        {
+          "color": "orange",
+          "icon": "fa-solid fa-image",
+          "title": "CK Assets Tools",
+          "text": "Desktop utility for preparing BeamNG textures, materials, and models.",
+          "images": ["images/cooker.webp"],
+          "url": "https://github.com/PrzemekWolw/goDragonCooker"
+        },
+        {
+          "color": "teal",
+          "icon": "fa-solid fa-circle-half-stroke",
+          "title": "GT7 Tone Mapper",
+          "text": "Gran Turismo 7 tonemapper for Unreal Engine 5.",
+          "images": ["https://github.com/PrzemekWolw/GT7ToneMapperUE5Plugin/raw/main/.github/media/HighresScreenshot00001.png"],
+          "url": "https://github.com/PrzemekWolw/GT7ToneMapperUE5Plugin"
+        },
+        {"color": "magenta", "icon": "fa-solid fa-file-image", "title": "Advanced PNG Export", "text": "Advanced Paint.NET PNG exporter.", "url": "https://github.com/PrzemekWolw/AdvancedPNGExport"},
+        {"color": "lime", "icon": "fa-solid fa-microchip", "title": "Simple GPU-P", "text": "Simple GPU partitioning tool for Windows.", "url": "https://github.com/PrzemekWolw/Simple-GPU-P"},
+        {"size": "wide", "color": "steel", "icon": "fa-brands fa-github", "title": "GitHub", "text": "More projects, addons, and experiments.", "url": "https://github.com/PrzemekWolw/"}
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "contact",
+      "background": "images/contact.webp",
+      "links": [
+        {"label": "github", "url": "https://github.com/przemekwolw"},
+        {"label": "youtube", "url": "https://www.youtube.com/carkiller"},
+        {"label": "beamng", "url": "https://www.beamng.com/resources/authors/car_killer.27522/"},
+        {"label": "steam", "url": "https://steamcommunity.com/id/przemekwolw"},
+        {"label": "instagram", "url": "https://www.instagram.com/przem.wolny/"}
+      ]
+    }
+  ]
+}
