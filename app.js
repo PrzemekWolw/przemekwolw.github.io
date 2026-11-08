@@ -90,7 +90,7 @@
     if (meta) meta.setAttribute('content', getComputedStyle(root).getPropertyValue('--bg').trim());
     const toggle = document.querySelector('.theme-toggle');
     if (toggle) {
-      toggle.firstChild.className = mode === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      toggle.firstChild.className = mode === 'dark' ? 'fa-regular fa-sun' : 'fa-regular fa-moon';
       toggle.setAttribute('aria-label', mode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
     }
   }

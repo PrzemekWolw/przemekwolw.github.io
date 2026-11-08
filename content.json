@@ -101,6 +101,15 @@
       "tools": [
         {
           "size": "wide",
+          "color": "teal",
+          "icon": "fa-solid fa-wand-magic-sparkles",
+          "title": "Material Wizard",
+          "text": "A tool to create PBR materials for BeamNG.",
+          "images": ["material-wizard/og.jpg"],
+          "url": "material-wizard/"
+        },
+        {
+          "size": "wide",
           "color": "cobalt",
           "icon": "fa-solid fa-cube",
           "title": "BeamNG Level Importer",
