@@ -1,6 +1,6 @@
 {
-  "title": "Car_Killer - Przemysław Wolny",
-  "description": "Personal website of Car_Killer (C/K) - BeamNG.drive modder, developer, technical artist.",
+  "title": "Car_Killer - Przemysław Wolny | BeamNG technical artist and modder",
+  "description": "Car_Killer (Przemysław Wolny): technical artist, QA and modder at BeamNG. BeamNG.drive mods, environment art, photogrammetry and free web tools like Material Wizard.",
   "mark": "C/K",
   "theme": {"mode": "dark", "accent": "#f15a22"},
   "hero": {"id": "hello", "video": "videos/hero_background.webm", "name": "Car_Killer", "hello": "Hello There! My name is Przemysław 'Car_Killer' Wolny.", "roles": "Technical Artist, QA, and Modder", "place": "BeamNG Technical Artist/QA"},
