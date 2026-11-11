@@ -325,20 +325,26 @@
           : [el];
         const index = Math.max(0, siblings.indexOf(el));
         if (el.animate) {
-          const turnstile = el.classList.contains('tool-block');
-          const anim = el.animate(
-            turnstile
-              ? [
-                  { opacity: 0, transform: 'perspective(900px) rotateY(-70deg)' },
-                  { opacity: 1, transform: 'perspective(900px) rotateY(0)' }
-                ]
-              : [
-                  { opacity: 0, transform: 'translateX(40px)' },
-                  { opacity: 1, transform: 'translateX(0)' }
-                ],
-            { duration: turnstile ? 640 : 520, easing: ease, fill: 'forwards', delay: index * (turnstile ? 90 : 60) }
-          );
-          settle(anim, el, { opacity: '1' });
+          if (el.classList.contains('tool-block')) {
+            const r = el.getBoundingClientRect();
+            const origin = -(40 + r.left) + 'px ' + (window.innerHeight / 2 - r.top) + 'px';
+            const delay = index * 50;
+            el.animate(
+              [
+                { transformOrigin: origin, transform: 'perspective(600px) rotateY(80deg)' },
+                { transformOrigin: origin, transform: 'perspective(600px) rotateY(0)' }
+              ],
+              { duration: 300, easing: 'cubic-bezier(0.01, 0.975, 0.4775, 0.9775)', fill: 'backwards', delay }
+            );
+            settle(el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 300, easing: 'cubic-bezier(0, 2, 0, 2)', fill: 'forwards', delay }), el, { opacity: '1' });
+          } else {
+            const delay = index * 60;
+            el.animate(
+              [{ transform: 'translateX(40px)' }, { transform: 'translateX(0)' }],
+              { duration: 550, easing: ease, fill: 'backwards', delay }
+            );
+            settle(el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 170, fill: 'forwards', delay }), el, { opacity: '1' });
+          }
         }
         el.querySelectorAll('.sheet-figure img').forEach((img) => {
           if (!img.animate) return;
@@ -394,13 +400,18 @@
     setTimeout(step, 2500 + Math.random() * 5000);
   });
 
+  document.querySelectorAll('.tool-block, .sheet-figure, .nav-links a, .nav-mark').forEach((node) => { node.draggable = false; });
+
   if (!reduce) {
     document.querySelectorAll('.tool-block, .sheet-figure, .contact-links a').forEach((node) => {
+      const tile = node.classList.contains('tool-block');
       node.addEventListener('pointerdown', (e) => {
+        if (e.button !== 0) return;
+        if (!tile) { node.style.transform = 'scale(0.975)'; return; }
         const r = node.getBoundingClientRect();
         const x = (e.clientX - r.left) / r.width - 0.5;
         const y = (e.clientY - r.top) / r.height - 0.5;
-        node.style.transform = 'perspective(800px) rotateX(' + (-y * 8).toFixed(2) + 'deg) rotateY(' + (x * 8).toFixed(2) + 'deg) scale(0.98)';
+        node.style.transform = 'perspective(800px) rotateX(' + (-y * 10).toFixed(2) + 'deg) rotateY(' + (x * 10).toFixed(2) + 'deg) scale(0.94)';
       });
       const release = () => { node.style.transform = ''; };
       ['pointerup', 'pointerleave', 'pointercancel'].forEach((type) => node.addEventListener(type, release));

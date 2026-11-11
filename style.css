@@ -140,8 +140,27 @@ body {
 }
 
 img { display: block; max-width: 100%; }
-a { color: inherit; text-decoration: none; }
+a { color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; }
+button { -webkit-tap-highlight-color: transparent; }
 ::selection { background: var(--accent); color: #fff; }
+:focus-visible { outline: 1px dotted currentColor; outline-offset: 2px; }
+
+/* Chrome is not selectable; prose, meta and the footer stay selectable. */
+.topnav,
+.hero-name,
+.pano-word,
+.sheet-figure,
+.tool-row,
+.contact-links,
+.next-page {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.sheet-figure img { -webkit-user-drag: none; }
+.pano-word,
+.next-page,
+.theme-toggle { -webkit-touch-callout: none; }
 
 .topnav {
   position: fixed;
@@ -175,12 +194,15 @@ a { color: inherit; text-decoration: none; }
 .theme-toggle {
   font-size: 14px;
   font-weight: 400;
-  opacity: 0.5;
-  transition: opacity 0.2s ease, box-shadow 0.35s var(--ease);
+  opacity: 0.4;
+  transition: opacity 0.167s ease, transform 0.167s var(--ease);
 }
 
-.nav-links a:hover,
-.theme-toggle:hover { opacity: 0.85; }
+@media (hover: hover) {
+  .nav-links a:hover,
+  .theme-toggle:hover { opacity: 0.7; }
+}
+.nav-links a:active { transform: scale(0.96); }
 
 .theme-toggle {
   width: 28px;
@@ -195,12 +217,9 @@ a { color: inherit; text-decoration: none; }
   cursor: pointer;
 }
 
-.theme-toggle:active { background: var(--text); color: var(--bg); }
+.theme-toggle:active { background: var(--text); color: var(--bg); opacity: 1; transform: scale(0.9); }
 
-.nav-links a.is-active {
-  opacity: 1;
-  box-shadow: inset 0 -2px 0 var(--accent);
-}
+.nav-links a.is-active { opacity: 1; }
 
 .hero {
   position: relative;
@@ -379,7 +398,7 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
   background: var(--surface);
   aspect-ratio: 16 / 10;
-  transition: transform 0.3s var(--ease);
+  transition: transform 0.167s var(--ease);
 }
 
 .slide {
@@ -458,20 +477,20 @@ a { color: inherit; text-decoration: none; }
 .repo-index span { color: var(--mute); }
 
 .tool-row {
-  --u: 80px;
+  --u: 70px;
   display: grid;
   grid-template-columns: repeat(auto-fill, var(--u));
   grid-auto-rows: var(--u);
   grid-auto-flow: dense;
-  gap: 8px;
+  gap: 10px;
 }
 
 .tool-block {
   position: relative;
   overflow: hidden;
   color: #fff;
-  transform-origin: left center;
-  transition: transform 0.3s var(--ease);
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--tile) 81%, #fff), color-mix(in srgb, var(--tile) 89%, #000));
+  transition: transform 0.12s var(--ease);
 }
 
 .tile-small { grid-column: span 1; grid-row: span 1; }
@@ -491,6 +510,13 @@ a { color: inherit; text-decoration: none; }
 .tile-image {
   background-size: cover;
   background-position: center;
+}
+
+.tile-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.11), transparent 50%, rgba(0, 0, 0, 0.13));
 }
 
 .tile-text {
@@ -514,14 +540,17 @@ a { color: inherit; text-decoration: none; }
   position: absolute;
   inset: 0;
   z-index: 1;
-  box-shadow: inset 0 0 0 3px #fff;
   background: rgba(255, 255, 255, 0.14);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.15s ease;
 }
 
-.tool-block:hover::after { opacity: 1; }
+@media (hover: hover) {
+  .tool-block:hover::after { opacity: 1; }
+}
+.tool-block:focus-visible { outline: none; }
+.tool-block:focus-visible::after { opacity: 1; background: none; box-shadow: inset 0 0 0 3px #fff; }
 
 .tile-name {
   position: absolute;
@@ -538,12 +567,15 @@ a { color: inherit; text-decoration: none; }
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.tool-cobalt { background: var(--cobalt); }
-.tool-orange { background: var(--orange); }
-.tool-teal { background: var(--teal); }
-.tool-magenta { background: var(--magenta); }
-.tool-lime { background: var(--lime); }
-.tool-steel { background: var(--steel); }
+.tile-wide .tile-name { font-size: 15px; }
+
+.tool-block { --tile: var(--accent); }
+.tool-cobalt { --tile: var(--cobalt); }
+.tool-orange { --tile: var(--orange); }
+.tool-teal { --tile: var(--teal); }
+.tool-magenta { --tile: var(--magenta); }
+.tool-lime { --tile: var(--lime); }
+.tool-steel { --tile: var(--steel); }
 
 .contact-links {
   list-style: none;
@@ -559,12 +591,14 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.05;
   border-bottom: 1px solid var(--line);
   padding: 6px 0;
-  transition: color 0.2s ease, padding-left 0.35s var(--ease), transform 0.3s var(--ease);
+  transition: color 0.2s ease, padding-left 0.35s var(--ease), transform 0.167s var(--ease);
 }
 
-.contact-links a:hover {
-  color: var(--accent);
-  padding-left: 18px;
+@media (hover: hover) {
+  .contact-links a:hover {
+    color: var(--accent);
+    padding-left: 18px;
+  }
 }
 
 .footer {
@@ -602,9 +636,10 @@ a { color: inherit; text-decoration: none; }
 
 .next-page i { transition: transform 0.4s var(--ease); }
 .next-page.is-up i { transform: rotate(180deg); }
-.next-page:hover { background: rgba(var(--bg-rgb), 0.6); }
-.next-page:active { background: var(--text); color: var(--bg); transform: scale(0.92); }
-.next-page:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media (hover: hover) {
+  .next-page:hover { background: rgba(var(--bg-rgb), 0.6); }
+}
+.next-page:active { background: var(--text); color: var(--bg); transform: scale(0.9); }
 
 @media (max-width: 860px) {
   .sheet,
@@ -619,8 +654,23 @@ a { color: inherit; text-decoration: none; }
   .nav-links a[data-nav="photography"] { display: none; }
 
   .tool-row {
-    --u: calc((100vw - 2 * var(--pad) - 3 * 8px) / 4);
+    --gap: 2.5vw;
+    --u: calc((100vw - 2 * var(--pad) - 3 * var(--gap)) / 4);
     grid-template-columns: repeat(4, 1fr);
+    gap: var(--gap);
+  }
+
+  .tool-block { background: var(--tile); }
+  .tile-image::after { content: none; }
+  .tile-text { padding: 8px 8px 32px; }
+  .tile-text p { font-size: 15px; }
+
+  .tile-name,
+  .tile-wide .tile-name {
+    left: 8px;
+    right: 8px;
+    bottom: 6px;
+    font-size: 15px;
   }
 
   .tile-face i { font-size: 36px; }
@@ -647,6 +697,8 @@ a { color: inherit; text-decoration: none; }
   .tool-block,
   .tool-block::after,
   .contact-links a,
+  .nav-links a,
+  .theme-toggle,
   .next-page,
   .next-page i { transition: none; }
 }
